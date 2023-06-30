@@ -57,14 +57,9 @@ export default function Home() {
   return (
     <>
       <header>
-        <Container>
           <NavMenu links={NavLinks} />
-        </Container>
       </header>
-      <HeroSection
-        title="Paga Tu Impuesto Predial En Linea"
-        subtitle="Con nuestro servicio en línea fácil de usar, puedes pagar tus impuestos rápida y seguramente con solo unos pocos clics"
-      />
+      <HeroSection />
       {/*<div className="py-20  sm:py-32 lg:pb-32 xl:pb-36">*/}
       {/*  <Container className="">*/}
       {/*    <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">*/}
@@ -93,7 +88,7 @@ export default function Home() {
       {/*    </div>*/}
       {/*  </Container>*/}
       {/*</div>*/}
-      <HowItsDone sectionTitle="Así es cómo funciona" steps={StepList} />
+      <HowItsDone title="Así es cómo funciona" steps={StepList} />
       <section id="" className="z-10 py-20 sm:py-32">
         <Features />
       </section>
