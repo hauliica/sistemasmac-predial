@@ -1,20 +1,13 @@
 'use client';
-import { AcunaLogo } from '@/components/vectors/acunalogo';
-import { Container } from '@/components/Container';
-import Link from 'next/link';
-
-import { PresidenciaHero } from '@/components/vectors/presidenciaHero';
-import { Button } from '@/components/Button';
-import { PasoUno } from '@/app/pasoUno';
-import { PasoDos } from '@/components/vectors/paso-dos';
-import React, { SVGProps } from 'react';
-import NavMenu from '@/components/NavMenu';
+import React from 'react';
+import NavMenu from '@/components/Header';
 import HeroSection from '@/components/Hero';
 import HowItsDone from '@/components/HowItsDone';
 import Features from '@/components/Features';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import FAQ from '@/components/FAQ';
+import Header from '@/components/Header';
 
 const NavLinks = [
   {
@@ -56,9 +49,7 @@ const StepList = [
 export default function Home() {
   return (
     <>
-      <header>
-          <NavMenu links={NavLinks} />
-      </header>
+      <Header />
       <HeroSection />
       {/*<div className="py-20  sm:py-32 lg:pb-32 xl:pb-36">*/}
       {/*  <Container className="">*/}

@@ -52,7 +52,7 @@ const Features = () => {
   ];
 
   return (
-    <div className="magicpattern-features flex flex-wrap justify-around gap-4 bg-white px-8 py-12">
+    <div className="magicpattern-features flex flex-wrap justify-around gap-4 px-8 py-12">
       {features.map((feature, index) => (
         <Feature
           key={index}

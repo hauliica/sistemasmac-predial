@@ -30,39 +30,45 @@
 //
 // export default HeroSection;
 import React from 'react';
-import {PresidenciaHero} from "@/components/vectors/presidenciaHero";
+import { PresidenciaHero } from '@/components/vectors/presidenciaHero';
 
 interface HeroSectionProps {
-    title: string;
-    subTitle: string;
-    buttonText: string;
-    buttonOnClick: () => void;
+  title: string;
+  subTitle: string;
+  buttonText: string;
+  buttonOnClick: () => void;
 }
 
 const handleCTAClick = () => {
-    // Handle your call to action button click
-    console.log("CTA button clicked!");
+  // Handle your call to action button click
+  console.log('CTA button clicked!');
 };
 
 const HeroSection: React.FC = () => {
-    return (
-        <section className="h-screen grid grid-rows-3 md:grid-cols-2 gap-5 px-8">
-            <div className="flex flex-col row-span-3 justify-center -mt-32">
-                <h1 className="font-bold text-5xl mb-12 text-[#fbe3ba]">Paga Tu Impuesto Predial. De La Forma Mas Facil.</h1>
-                <h2 className="font-semibold mb-5 text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur culpa eveniet illum maxime non provident quod repudiandae tempore veritatis.</h2>
-                <button
-                    className="max-w-fit bg-orange-500 hover:bg-orange-600 focus:outline-none text-white font-semibold py-2 px-5 mt-5 rounded shadow"
-                    onClick={handleCTAClick}
-                >
-                    Paga Ahora!
-                </button>
-            </div>
-            <div className="w-full h-64 flex items-center justify-center md:row-span-3 md:h-screen">
-                {/* Illustration, replace with your own */}
-                <PresidenciaHero className="-mt-24"/>
-            </div>
-        </section>
-    );
+  return (
+    <section className="container mx-auto grid h-screen grid-rows-3 gap-5 px-8 md:grid-cols-2">
+      <div className="row-span-3 -mt-32 flex flex-col justify-center">
+        <h1 className="mb-12 md:leading-snug text-5xl font-medium text-amber-50">
+          Paga Tu Impuesto Predial. De La Forma Mas Facil.
+        </h1>
+        <h2 className="mb-5 text-neutral-200 font-light">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
+          consequuntur culpa eveniet illum maxime non provident quod repudiandae
+          tempore veritatis.
+        </h2>
+        <button
+          className="mt-5 rounded bg-orange-500 px-5 py-4  font-semibold text-white shadow hover:bg-orange-600 focus:outline-none"
+          onClick={handleCTAClick}
+        >
+          Paga Ahora!
+        </button>
+      </div>
+      <div className="flex h-64 w-full items-center justify-center md:row-span-3 md:h-screen">
+        {/* Illustration, replace with your own */}
+        <PresidenciaHero className="-mt-24" />
+      </div>
+    </section>
+  );
 };
 
 export default HeroSection;
