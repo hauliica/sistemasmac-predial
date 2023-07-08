@@ -46,9 +46,9 @@ const handleCTAClick = () => {
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="container mx-auto grid h-screen grid-rows-3 gap-5 px-8 md:grid-cols-2">
-      <div className="row-span-3 -mt-32 flex flex-col justify-center">
-        <h1 className="mb-12 md:leading-snug text-5xl font-medium text-amber-50">
+    <section className="container mt-4 mx-auto grid h-screen grid-rows-3 gap-5 md:grid-cols-2">
+      <div className="pr-32 row-span-3 -mt-32 flex flex-col justify-center">
+        <h1 className="md:mb-8 md:leading-snug text-5xl font-medium text-amber-50">
           Paga Tu Impuesto Predial. De La Forma Mas Facil.
         </h1>
         <h2 className="mb-5 text-neutral-200 font-light">
@@ -57,7 +57,7 @@ const HeroSection: React.FC = () => {
           tempore veritatis.
         </h2>
         <button
-          className="mt-5 rounded bg-orange-500 px-5 py-4  font-semibold text-white shadow hover:bg-orange-600 focus:outline-none"
+          className="mt-5 rounded bg-orange-200 px-5 py-4  font-semibold text-orange-700 hover:text-orange-100 shadow hover:bg-orange-600 focus:outline-none transition-all"
           onClick={handleCTAClick}
         >
           Paga Ahora!

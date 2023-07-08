@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import NavMenu from '@/components/Header';
 import HeroSection from '@/components/Hero';
 import HowItsDone from '@/components/HowItsDone';
 import Features from '@/components/Features';
@@ -8,25 +7,6 @@ import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import FAQ from '@/components/FAQ';
 import Header from '@/components/Header';
-
-const NavLinks = [
-  {
-    name: 'Inicio',
-    href: '#inicio',
-  },
-  {
-    name: 'Consulta',
-    href: '#consulta',
-  },
-  {
-    name: 'Contacto',
-    href: '#contacto',
-  },
-  {
-    name: 'Ayuda',
-    href: '#ayuda',
-  },
-];
 
 const StepList = [
   {
@@ -49,7 +29,7 @@ const StepList = [
 export default function Home() {
   return (
     <>
-      <Header />
+      <Header doShow={true} />
       <HeroSection />
       {/*<div className="py-20  sm:py-32 lg:pb-32 xl:pb-36">*/}
       {/*  <Container className="">*/}
@@ -61,7 +41,7 @@ export default function Home() {
       {/*        </h1>*/}
       {/*        <p className="text-md mt-6 break-words pr-8 font-sans font-normal capitalize text-gray-600">*/}
       {/*          Con nuestro servicio en línea fácil de usar, puedes pagar tus*/}
-      {/*          impuestos rápida y seguramente con solo unos pocos clics. Con*/}
+      {/*          Impuestos rápida y seguramente con solo unos pocos clics. Con*/}
       {/*          SisMac, puedes pagar tus impuestos fácilmente y de forma segura*/}
       {/*          en línea.*/}
       {/*        </p>*/}

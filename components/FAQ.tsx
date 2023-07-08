@@ -35,7 +35,7 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <section className="container mx-auto rounded-md bg-white p-8 shadow-md">
+    <section className="container my-24 mx-auto rounded-md bg-white p-8 shadow-md">
       <h1 className="mb-6 text-2xl font-bold text-gray-800">
         Frequently Asked Questions
       </h1>
