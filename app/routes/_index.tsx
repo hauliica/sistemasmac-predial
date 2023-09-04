@@ -4,6 +4,7 @@ import { AcunaLogo } from "~/assets/acunalogo";
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import { useState } from "react";
 import { PresidenciaHero } from "~/assets/PresidenciaVector";
+import {AiOutlineQuestionCircle} from "react-icons/ai";
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -14,6 +15,34 @@ export const meta: V2_MetaFunction = () => {
     },
   ];
 };
+
+const questions = [
+  {
+    title: '¿Qué es el impuesto predial y por qué debo pagarlo?',
+    content: 'El impuesto predial es un gravamen que se aplica sobre la propiedad de bienes inmuebles. Los fondos recaudados son utilizados para financiar diversos servicios y obras públicas en el municipio de Acuña. El pago puntual de este impuesto es crucial para el desarrollo y mantenimiento de la localidad.'
+  },
+  {
+    title: '¿Cómo puedo pagar mi impuesto predial en línea?',
+    content: 'Para pagar en línea, ingresa tu Cuenta-Folio en el campo correspondiente en la sección del Hero de nuestra página principal. Luego, sigue los pasos para completar el pago mediante nuestra segura pasarela de pagos.'
+  },
+  {
+    title: '¿Qué es un Cuenta-Folio y dónde lo encuentro?',
+    content: 'El Cuenta-Folio es un número único asignado a tu propiedad que sirve para identificarla en el sistema. Puedes encontrar este número en tus recibos anteriores de impuesto predial o en la oficina del municipio.'
+  },
+  {
+    title: '¿Qué hago si no tengo un Cuenta-Folio?',
+    content: 'Si no tienes un Cuenta-Folio, puedes solicitarlo llenando un formulario en nuestra página de "Solicitud de Cuenta-Folio". Una vez enviado el formulario, recibirás tu Cuenta-Folio a través del método que elijas: Email o SMS.'
+  },
+  {
+    title: '¿Es seguro pagar en línea?',
+    content: 'Sí, la seguridad es una de nuestras principales preocupaciones. Utilizamos encriptación SSL/TLS para asegurar que tus datos y transacciones estén protegidos.'
+  },
+  {
+    title: '¿Puedo pagar en efectivo o en una tienda física?',
+    content: 'Sí, ofrecemos la opción de imprimir un formato con un código de barras que podrás utilizar para pagar en tiendas OXXO.'
+  }
+];
+
 
 export default function Index() {
   const [isOpen, setIsOpen] = useState(false);
@@ -349,70 +378,27 @@ export default function Index() {
       </section>
 
       {/* FAQ con preguntas y respuestas comunes. */}
-      <section className="bg-gray-100 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">
-            ¿Tienes Preguntas? ¡Nosotros Tenemos Respuestas!
-          </h2>
-          <div className="flex flex-wrap -mx-4">
-            {/* FAQ Item */}
-            <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out">
-                <h3 className="text-xl font-semibold mb-4">
-                  What is the tax rate?
-                </h3>
-                <p className="text-base leading-6">
-                  The tax rate varies depending on your location and income
-                  level. You can use our calculator for a personalized estimate.
-                </p>
-              </div>
+        <section className="bg-white py-6 sm:py-8 lg:py-12">
+          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+            <div className="mb-10 md:mb-16">
+              <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Preguntas frecuentes</h2>
+              <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+                Aquí encontrarás algunas respuestas a preguntas comunes sobre el Pago en Línea del Impuesto Predial.
+              </p>
             </div>
-            {/* FAQ Item */}
-            <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out">
-                <h3 className="text-xl font-semibold mb-4">
-                  How secure is my data?
-                </h3>
-                <p className="text-base leading-6">
-                  We use state-of-the-art encryption and security measures to
-                  keep your data safe.
-                </p>
-              </div>
-            </div>
-            {/* FAQ Item */}
-            <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out">
-                <h3 className="text-xl font-semibold mb-4">
-                  How do I apply for a refund?
-                </h3>
-                <p className="text-base leading-6">
-                  You can apply for a refund through the app. Head over to the
-                  "Refunds" section and follow the instructions.
-                </p>
-              </div>
-            </div>
-            {/* FAQ Item */}
-            <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8">
-              <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200 ease-in-out">
-                <h3 className="text-xl font-semibold mb-4">
-                  Can I use this for business?
-                </h3>
-                <p className="text-base leading-6">
-                  Absolutely, we offer both personal and business tax solutions.
-                </p>
-              </div>
+            <div className="grid gap-8 sm:grid-cols-2 sm:gap-y-10 xl:grid-cols-3">
+              {questions.map((question, index) => (
+                <div key={index} className="relative rounded-lg bg-gray-100 p-5 pt-8">
+              <span className="absolute -top-4 left-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#FF512F] text-white">
+                <AiOutlineQuestionCircle className="h-5 w-5"/>
+              </span>
+                  <h3 className="mb-3 text-lg font-semibold text-zinc-900 md:text-xl">{question.title}</h3>
+                  <p className="text-gray-500">{question.content}</p>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="text-center mt-8">
-            <Link
-              to="/more-faqs"
-              className="text-blue-500 hover:text-blue-600 transition-colors duration-200 ease-in-out"
-            >
-              Ver Mas
-            </Link>
-          </div>
-        </div>
-      </section>
+        </section>
 
       {/* Footer */}
       <footer className="bg-neutral-200 text-center md:text-left text-sm text-neutral-500 py-12">
