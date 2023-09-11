@@ -1,10 +1,40 @@
 import type { V2_MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { AcunaLogo } from "~/assets/acunalogo";
-import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
+import {
+  FaArrowUp,
+  FaFacebook,
+  FaLock,
+  FaServer,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
 import { useState } from "react";
 import { PresidenciaHero } from "~/assets/PresidenciaVector";
-import {AiOutlineQuestionCircle} from "react-icons/ai";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
+import { VentajasSVG } from "~/assets/Ventajas";
+import HeroSection from "~/components/Hero";
+
+const features = [
+  {
+    name: "Pago en línea rápido y seguro",
+    description:
+      "Paga tus impuestos de propiedad de manera rápida y segura desde la comodidad de tu hogar. Evita largas filas y tiempos de espera.",
+    icon: FaArrowUp,
+  },
+  {
+    name: "Certificados SSL",
+    description:
+      "Tus transacciones en línea están protegidas con certificados SSL avanzados para garantizar la seguridad de tus datos.",
+    icon: FaLock,
+  },
+  {
+    name: "Respaldo de bases de datos",
+    description:
+      "Tus datos y registros están respaldados de manera segura para garantizar la integridad de la información.",
+    icon: FaServer,
+  },
+];
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -18,167 +48,136 @@ export const meta: V2_MetaFunction = () => {
 
 const questions = [
   {
-    title: '¿Qué es el impuesto predial y por qué debo pagarlo?',
-    content: 'El impuesto predial es un gravamen que se aplica sobre la propiedad de bienes inmuebles. Los fondos recaudados son utilizados para financiar diversos servicios y obras públicas en el municipio de Acuña. El pago puntual de este impuesto es crucial para el desarrollo y mantenimiento de la localidad.'
+    title: "¿Qué es el impuesto predial y por qué debo pagarlo?",
+    content:
+      "El impuesto predial es un gravamen que se aplica sobre la propiedad de bienes inmuebles. Los fondos recaudados son utilizados para financiar diversos servicios y obras públicas en el municipio de Acuña. El pago puntual de este impuesto es crucial para el desarrollo y mantenimiento de la localidad.",
   },
   {
-    title: '¿Cómo puedo pagar mi impuesto predial en línea?',
-    content: 'Para pagar en línea, ingresa tu Cuenta-Folio en el campo correspondiente en la sección del Hero de nuestra página principal. Luego, sigue los pasos para completar el pago mediante nuestra segura pasarela de pagos.'
+    title: "¿Cómo puedo pagar mi impuesto predial en línea?",
+    content:
+      "Para pagar en línea, ingresa tu Cuenta-Folio en el campo correspondiente en la sección del Hero de nuestra página principal. Luego, sigue los pasos para completar el pago mediante nuestra segura pasarela de pagos.",
   },
   {
-    title: '¿Qué es un Cuenta-Folio y dónde lo encuentro?',
-    content: 'El Cuenta-Folio es un número único asignado a tu propiedad que sirve para identificarla en el sistema. Puedes encontrar este número en tus recibos anteriores de impuesto predial o en la oficina del municipio.'
+    title: "¿Qué es un Cuenta-Folio y dónde lo encuentro?",
+    content:
+      "El Cuenta-Folio es un número único asignado a tu propiedad que sirve para identificarla en el sistema. Puedes encontrar este número en tus recibos anteriores de impuesto predial o en la oficina del municipio.",
   },
   {
-    title: '¿Qué hago si no tengo un Cuenta-Folio?',
-    content: 'Si no tienes un Cuenta-Folio, puedes solicitarlo llenando un formulario en nuestra página de "Solicitud de Cuenta-Folio". Una vez enviado el formulario, recibirás tu Cuenta-Folio a través del método que elijas: Email o SMS.'
+    title: "¿Qué hago si no tengo un Cuenta-Folio?",
+    content:
+      'Si no tienes un Cuenta-Folio, puedes solicitarlo llenando un formulario en nuestra página de "Solicitud de Cuenta-Folio". Una vez enviado el formulario, recibirás tu Cuenta-Folio a través del método que elijas: Email o SMS.',
   },
   {
-    title: '¿Es seguro pagar en línea?',
-    content: 'Sí, la seguridad es una de nuestras principales preocupaciones. Utilizamos encriptación SSL/TLS para asegurar que tus datos y transacciones estén protegidos.'
+    title: "¿Es seguro pagar en línea?",
+    content:
+      "Sí, la seguridad es una de nuestras principales preocupaciones. Utilizamos encriptación SSL/TLS para asegurar que tus datos y transacciones estén protegidos.",
   },
   {
-    title: '¿Puedo pagar en efectivo o en una tienda física?',
-    content: 'Sí, ofrecemos la opción de imprimir un formato con un código de barras que podrás utilizar para pagar en tiendas OXXO.'
-  }
+    title: "¿Puedo pagar en efectivo o en una tienda física?",
+    content:
+      "Sí, ofrecemos la opción de imprimir un formato con un código de barras que podrás utilizar para pagar en tiendas OXXO.",
+  },
 ];
 
-
 export default function Index() {
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <main className="flex flex-col min-h-screen">
-      <header className="flex items-center sticky top-0 backdrop-blur-md bg-opacity-40 justify-between py-2 md:py-4 px-6 z-20 bg-white shadow-md">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center">
-              <AcunaLogo className="w-36 h-10 object-cover" />
-            </div>
-            <div className="hidden md:flex md:items-center md:justify-end md:w-1/2">
-              <nav className="flex items-center justify-between gap-12 text-base text-darkslategray font-poppins">
-                <Link
-                  to="/"
-                  className="no-underline text-current leading-6 font-medium"
-                >
-                  Inicio
-                </Link>
-                <Link
-                  to="/consulta"
-                  className="no-underline text-current leading-6 font-medium"
-                >
-                  Consulta
-                </Link>
-                <Link
-                  to="/ayuda"
-                  className="no-underline text-current leading-6 font-medium"
-                >
-                  Ayuda
-                </Link>
-                <Link
-                  to="/contacto"
-                  className="no-underline text-current leading-6 font-medium"
-                >
-                  Contacto
-                </Link>
-              </nav>
-            </div>
-            <div className="md:hidden flex items-center justify-end w-1/2">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center px-3 py-2 border rounded"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          {isOpen && (
-            <div className="md:hidden w-full">
-              <nav className="flex flex-col items-start justify-start gap-4 text-base text-darkslategray font-poppins">
-                <Link
-                  to="/"
-                  className="no-underline text-current leading-6 font-medium"
-                >
-                  Inicio
-                </Link>
-                <Link
-                  to="/consulta"
-                  className="no-underline text-current leading-6 font-medium"
-                >
-                  Consulta
-                </Link>
-                <Link
-                  to="/ayuda"
-                  className="no-underline text-current leading-6 font-medium"
-                >
-                  Ayuda
-                </Link>
-                <Link
-                  to="/contacto"
-                  className="no-underline text-current leading-6 font-medium"
-                >
-                  Contacto
-                </Link>
-              </nav>
-            </div>
-          )}
-        </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="flex-grow flex items-center justify-center p-4 md:p-8 z-0">
-        <div className="container mx-auto flex flex-wrap md:flex-nowrap items-center h-full">
-          <div className="w-full md:w-1/2 text-center md:text-left p-4 lg:-mt-40">
-            <h1 className="text-5xl md:text-6xl text-slate-100 mix-blend-exclusion font-bold tracking-tighter mb-8 md:leading-tight">
-              Bienvenido al Portal de Impuesto Predial de Acuña
-            </h1>
-            <p className="text-md md:text-lg px-2 leading-none text-zinc-300 text-opacity-80 tracking-tighter mb-8">
-              Pagando tus impuestos, estás construyendo un mejor mañana. Te
-              Ofrecemos una solución sencilla y segura para mantener tus pagos
-              de impuesto predial al día. No más filas, no más papel.
-            </p>
-            <form
-              action="#"
-              method="post"
-              className="flex justify-center md:justify-start"
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+          <header className="flex items-center 2xl:mb-8 justify-between py-4 md:py-6">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
+              aria-label="logo"
             >
-              <label htmlFor="idInput" className="sr-only">
-                Enter ID
-              </label>
-              <input
-                id="idInput"
-                type="text"
-                placeholder="Enter your ID"
-                className="p-2 rounded-md"
-                aria-required="true"
-              />
-              <button
-                type="submit"
-                className="ml-2 p-2 rounded-md bg-blue-600 text-white"
-              >
-                CTA
-              </button>
-            </form>
-          </div>
+              <AcunaLogo className="h-auto w-32" />
+            </Link>
 
-          <div className="w-full md:w-1/2 p-4 flex justify-center">
-            <PresidenciaHero className="max-h-[300px] md:max-h-full" />
-          </div>
+            <nav className="hidden gap-12 lg:flex">
+              <Link to="#" className="text-lg font-semibold text-amber-500">
+                Inicio
+              </Link>
+              <Link
+                to="#"
+                className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-amber-500 active:text-amber-700"
+              >
+                Consulta
+              </Link>
+              <Link
+                to="#"
+                className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-amber-500 active:text-amber-700"
+              >
+                Conoce
+              </Link>
+              <Link
+                to="#"
+                className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-amber-500 active:text-amber-700"
+              >
+                Ayuda
+              </Link>
+            </nav>
+
+            <Link
+              to="#"
+              className="hidden rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:inline-block"
+            >
+              Solicita
+            </Link>
+
+            <button
+              type="button"
+              className="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Menu
+            </button>
+          </header>
+
+          <section className="flex flex-col justify-center lg:flex-row">
+            <div className="flex flex-col justify-center py-8 xl:w-5/12">
+              <p className="mb-4 font-semibold text-amber-600 md:text-lg 2xl:text-xl">
+                Estamos orgullosos de presentar
+              </p>
+
+              <h1 className="mb-8 text-4xl text-center lg:text-left font-bold 2xl:font-bold text-zinc-950 md:mb-12 md:text-5xl 2xl:text-6xl">
+                Un nuevo método para pagar tu predial
+              </h1>
+
+              <p className="mb-8 leading-tight 2xl:leading-relaxed text-gray-600 md:mb-12 lg:w-4/5 2xl:text-lg">
+                Te presentamos un sistema simple y eficiente que te permitirá
+                pagar tu impuesto predial en línea, sin tener que salir de casa.
+                Aprovecha esta nueva modalidad y evita filas y tiempos de
+                espera.
+              </p>
+
+              <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
+                <Link
+                  to="#"
+                  className="inline-block rounded-lg bg-amber-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-amber-300 transition duration-100 hover:bg-amber-600 focus-visible:ring active:bg-amber-700 md:text-base"
+                >
+                  ¡Haz tu Pago!
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-center py-8 xl:w-5/12">
+              <PresidenciaHero className="max-h-[300px] md:max-h-full" />
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       {/* "¿Por qué es importante pagar el impuesto predial?" Section */}
       <section className="bg-gray-100 bg-blend-luminosity bg-opacity-25 py-16 px-4 sm:px-6 lg:px-8">
@@ -331,74 +330,127 @@ export default function Index() {
       {/*    </div>*/}
       {/*  </div>*/}
       {/*</section>*/}
-      <section className="flex flex-col-reverse lg:flex-row items-center justify-between p-8 bg-gray-100">
-        {/* Text Content */}
-        <div className="lg:w-1/2 p-4">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">
-            Ventajas de pagar en línea
-          </h2>
-          <p className="text-gray-700 mb-4">
-            Realiza tus pagos de impuestos de manera rápida, sencilla y segura.
-          </p>
-          <ul className="list-disc list-inside text-gray-700 mb-4">
-            <li>Seguridad garantizada</li>
-            <li>Pago instantáneo</li>
-            <li>Acceso 24/7</li>
-          </ul>
-          <Link to="/learn-more" className="text-blue-500 hover:underline">
-            Aprender más
-          </Link>
+      <div className="overflow-hidden bg-white shadow-md py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div className="lg:pr-8 lg:pt-4">
+              <div className="lg:max-w-lg">
+                <h2 className="text-base text-[#ff9836] font-semibold leading-7">
+                  Ventajas de Pagar en Línea
+                </h2>
+                <p className="mt-2 text-3xl font-bold tracking-tight text-neutral-800 sm:text-4">
+                  Una forma más conveniente
+                </p>
+                <p className="mt-6 text-lg leading-6 text-gray-600">
+                  Pagar tus impuestos de propiedad en línea en la Ciudad de
+                  Acuña tiene ventajas significativas para ti y tu comunidad.
+                </p>
+                <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                  {features.map((feature) => (
+                    <div key={feature.name} className="relative pl-9">
+                      <dt className="inline font-semibold text-neutral-800">
+                        <feature.icon
+                          className="absolute left-1 top-1 h-5 w-5 text-[#ff9836]"
+                          aria-hidden="true"
+                        />
+                        {feature.name}
+                      </dt>{" "}
+                      <dd className="inline text-gray-600">
+                        {feature.description}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+            <VentajasSVG className="w-[48rem] max-w-none sm:w-full md:-ml-4 lg:-ml-0" />
+          </div>
         </div>
+      </div>
 
-        {/* Image Content */}
-        <div className="lg:w-1/2 p-4">
-          <img
-            src="/path/to/your/image.jpg"
-            alt="Advantages of Paying Online"
-            className="w-full h-auto shadow-lg rounded"
-          />
-        </div>
-      </section>
-
-      {/* Seccion Call to Action final con un solo input para la Cuenta-Folio. para promover el pago. */}
       <section className="bg-gradient-to-r from-[#F09819] to-[#FF512F] text-white py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-between">
             {/* <!-- Text content --> */}
             <div className="w-full sm:w-6/12 lg:w-5/12 mb-8 sm:mb-0">
               <h2 className="text-3xl lg:text-4xl font-bold leading-tight">
-                Tu Pago de Impuestos en un Clic
+                Comienza Ahora con Tu Pago de Impuestos
               </h2>
-              <p className="text-lg lg:text-xl mt-4">
-                Simplifica tu vida con nuestra aplicación segura y eficiente.
+              <p className="text-lg lg:text-xl mt-8">
+                Honestidad, transparencia y eficiencia, son las palabras que
+                mejor describen nuestro servicio de Pago de Impuesto Predial en
+                Línea. Te invitamos a formar parte de una Ciudad de Acuña más
+                digital y eco-amigable, simplificando tu vida con nuestro
+                servicio seguro y eficiente.
               </p>
+            </div>
+
+            {/* <!-- Input form --> */}
+            <div className="w-full sm:w-6/12 lg:w-5/12 text-center sm:text-left">
+              <form className="mt-8 sm:mt-0 bg-gray-100 shadow-lg shadow-amber-800 p-6 rounded">
+                <div className="mb-5">
+                  <label
+                    htmlFor="cuentaClave"
+                    className="font-semibold text-gray-700 block mb-2"
+                  >
+                    Cuenta Clave
+                  </label>
+                  <input
+                    type="text"
+                    id="cuentaClave"
+                    className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Ingresa tu cuenta clave"
+                  />
+                </div>
+                <button
+                  className="bg-[#ffa227] hover:bg-[#ff9735] transition-all shadow-transparent hover:-translate-y-0.5 hover:shadow-sm text-amber-50 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+                  type="submit"
+                >
+                  Procede con el Pago
+                </button>
+                <p className="text-sm text-gray-700 mt-4">
+                  ¿Desconoces tu cuenta clave?
+                  <Link to="#" className="underline text-amber-600">
+                    Solicítala aquí
+                  </Link>
+                  .
+                </p>
+              </form>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ con preguntas y respuestas comunes. */}
-        <section className="bg-white py-6 sm:py-8 lg:py-12">
-          <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <div className="mb-10 md:mb-16">
-              <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Preguntas frecuentes</h2>
-              <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
-                Aquí encontrarás algunas respuestas a preguntas comunes sobre el Pago en Línea del Impuesto Predial.
-              </p>
-            </div>
-            <div className="grid gap-8 sm:grid-cols-2 sm:gap-y-10 xl:grid-cols-3">
-              {questions.map((question, index) => (
-                <div key={index} className="relative rounded-lg bg-gray-100 p-5 pt-8">
-              <span className="absolute -top-4 left-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#FF512F] text-white">
-                <AiOutlineQuestionCircle className="h-5 w-5"/>
-              </span>
-                  <h3 className="mb-3 text-lg font-semibold text-zinc-900 md:text-xl">{question.title}</h3>
-                  <p className="text-gray-500">{question.content}</p>
-                </div>
-              ))}
-            </div>
+      <section className="bg-white py-6 sm:py-8 lg:py-12">
+        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+          <div className="mb-10 md:mb-16">
+            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+              Preguntas frecuentes
+            </h2>
+            <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+              Aquí encontrarás algunas respuestas a preguntas comunes sobre el
+              Pago en Línea del Impuesto Predial.
+            </p>
           </div>
-        </section>
+          <div className="grid gap-8 sm:grid-cols-2 sm:gap-y-10 xl:grid-cols-3">
+            {questions.map((question, index) => (
+              <div
+                key={index}
+                className="relative rounded-lg bg-gray-100 p-5 pt-8"
+              >
+                <span className="absolute -top-4 left-4 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#FF512F] text-white">
+                  <AiOutlineQuestionCircle className="h-5 w-5" />
+                </span>
+                <h3 className="mb-3 text-lg font-semibold text-zinc-900 md:text-xl">
+                  {question.title}
+                </h3>
+                <p className="text-gray-500">{question.content}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="bg-neutral-200 text-center md:text-left text-sm text-neutral-500 py-12">
