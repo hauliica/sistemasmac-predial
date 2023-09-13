@@ -1,6 +1,7 @@
 import { Link } from "@remix-run/react";
 import React from "react";
 import { FaFacebookSquare, FaTwitterSquare } from "react-icons/fa";
+import { AcunaLogo } from "~/assets/acunalogo";
 import CardPropiedad from "~/components/CardPropiedad";
 import CardPropietario from "~/components/CardPropietario";
 import Header from "~/components/Header";
@@ -10,29 +11,29 @@ export default function Consulta() {
     <body className="bg-gray-200">
       <header className="mb-6 bg-white px-6 py-2 shadow-sm lg:px-16">
         <nav className="container mx-auto flex items-center justify-between">
-          <a href="#" className="text-2xl font-bold text-indigo-500">
-            Logo
-          </a>
+          <Link to="#" className="text-2xl font-bold text-indigo-500">
+            <AcunaLogo className="h-auto w-24"/>
+          </Link>
           <ul className="flex space-x-4">
             <li>
-              <a href="#" className="text-gray-500 hover:text-indigo-500">
+              <Link to="#" className="text-gray-500 hover:text-indigo-500">
                 FAQs
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="text-gray-500 hover:text-indigo-500">
+              <Link to="#" className="text-gray-500 hover:text-indigo-500">
                 Contact Us
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="text-gray-500 hover:text-indigo-500">
+              <Link to="#" className="text-gray-500 hover:text-indigo-500">
                 Help
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="text-red-500 hover:text-red-600">
+              <Link to="#" className="text-red-500 hover:text-red-600">
                 Exit
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -110,41 +111,41 @@ export default function Consulta() {
                   <h3 className="text-base font-medium text-gray-900">
                     Solutions
                   </h3>
-                  <ul role="list" className="mt-4 space-y-4">
+                  <ul className="mt-4 space-y-4">
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Marketing
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Analytics
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Commerce
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Insights
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -154,39 +155,39 @@ export default function Consulta() {
                   </h3>
                   <ul role="list" className="mt-4 space-y-4">
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Pricing
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Documentation
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Guides
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         API Status
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -196,81 +197,81 @@ export default function Consulta() {
                   <h3 className="text-base font-medium text-gray-900">
                     Company
                   </h3>
-                  <ul role="list" className="mt-4 space-y-4">
+                  <ul className="mt-4 space-y-4">
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         About
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Blog
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Jobs
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Press
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Partners
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
                 <div className="mt-12 md:mt-0">
                   <h3 className="text-base font-medium text-gray-900">Legal</h3>
-                  <ul role="list" className="mt-4 space-y-4">
+                  <ul className="mt-4 space-y-4">
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Claim
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Privacy
-                      </a>
+                      </Link>
                     </li>
 
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        to="#"
                         className="text-base text-gray-500 hover:text-gray-900"
                       >
                         Terms
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -349,7 +350,7 @@ export default function Consulta() {
           </div>
           <div className="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
             <div className="flex space-x-6 md:order-2">
-              <a href="#" className="text-gray-400 hover:text-gray-500">
+              <Link to="#" className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">Facebook</span>
                 <svg
                   className="h-6 w-6"
@@ -363,9 +364,9 @@ export default function Consulta() {
                     clip-rule="evenodd"
                   />
                 </svg>
-              </a>
+              </Link>
 
-              <a href="#" className="text-gray-400 hover:text-gray-500">
+              <Link to="#" className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">Instagram</span>
                 <svg
                   className="h-6 w-6"
@@ -379,9 +380,9 @@ export default function Consulta() {
                     clip-rule="evenodd"
                   />
                 </svg>
-              </a>
+              </Link>
 
-              <a href="#" className="text-gray-400 hover:text-gray-500">
+              <Link to="#" className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">Twitter</span>
                 <svg
                   className="h-6 w-6"
@@ -391,9 +392,9 @@ export default function Consulta() {
                 >
                   <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                 </svg>
-              </a>
+              </Link>
 
-              <a href="#" className="text-gray-400 hover:text-gray-500">
+              <Link to="#" className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">GitHub</span>
                 <svg
                   className="h-6 w-6"
@@ -407,9 +408,9 @@ export default function Consulta() {
                     clip-rule="evenodd"
                   />
                 </svg>
-              </a>
+              </Link>
 
-              <a href="#" className="text-gray-400 hover:text-gray-500">
+              <Link to="#" className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">Dribbble</span>
                 <svg
                   className="h-6 w-6"
@@ -423,7 +424,7 @@ export default function Consulta() {
                     clip-rule="evenodd"
                   />
                 </svg>
-              </a>
+              </Link>
             </div>
             <p className="mt-8 text-base text-gray-400 md:order-1 md:mt-0">
               &copy; 2020 Your Company, Inc. All rights reserved.

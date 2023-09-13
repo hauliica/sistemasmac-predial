@@ -80,104 +80,63 @@ const questions = [
 ];
 
 export default function Index() {
-
   return (
     <main className="flex flex-col min-h-screen">
-      <div className="bg-gray-50 min-h-screen">
-        <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-          <header className="flex items-center 2xl:mb-8 justify-between py-4 md:py-6">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2.5 text-2xl font-bold text-black md:text-3xl"
-              aria-label="logo"
-            >
-              <AcunaLogo className="h-auto w-32" />
-            </Link>
-
-            <nav className="hidden gap-12 lg:flex">
-              <Link to="#" className="text-lg font-semibold text-amber-500">
+      <header className="bg-white drop-shadow-md h-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center">
+              <AcunaLogo className="w-24 mr-2" />
+            </div>
+            <nav className="flex space-x-4">
+              <Link to="#" className="text-gray-600 hover:text-gray-800">
                 Inicio
               </Link>
-              <Link
-                to="#"
-                className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-amber-500 active:text-amber-700"
-              >
+              <Link to="#" className="text-gray-600 hover:text-gray-800">
+                Ventajas
+              </Link>
+              <Link to="#" className="text-gray-600 hover:text-gray-800">
                 Consulta
               </Link>
-              <Link
-                to="#"
-                className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-amber-500 active:text-amber-700"
-              >
-                Conoce
-              </Link>
-              <Link
-                to="#"
-                className="text-lg font-semibold text-gray-600 transition duration-100 hover:text-amber-500 active:text-amber-700"
-              >
+              <Link to="#" className="text-gray-600 hover:text-gray-800">
                 Ayuda
               </Link>
             </nav>
+          </div>
+        </div>
+      </header>
 
-            <Link
-              to="#"
-              className="hidden rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:inline-block"
-            >
-              Solicita
-            </Link>
-
-            <button
-              type="button"
-              className="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Menu
-            </button>
-          </header>
-
-          <section className="flex flex-col justify-center lg:flex-row">
-            <div className="flex flex-col justify-center py-8 xl:w-5/12">
-              <p className="mb-4 font-semibold text-amber-600 md:text-lg 2xl:text-xl">
+      <section className="bg-gray-100 h-screen">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="mt-8 lg:-mt-4 text-center lg:w-4/5 lg:text-left flex flex-col justify-center">
+              <span className="mb-2 font-semibold text-amber-500">
                 Estamos orgullosos de presentar
-              </p>
-
-              <h1 className="mb-8 text-4xl text-center lg:text-left font-bold 2xl:font-bold text-zinc-950 md:mb-12 md:text-5xl 2xl:text-6xl">
+              </span>
+              <h2 className="text-4xl font-bold text-gray-800 mb-4 lg:text-5xl lg:mb-8">
                 Un nuevo método para pagar tu predial
-              </h1>
-
-              <p className="mb-8 leading-tight 2xl:leading-relaxed text-gray-600 md:mb-12 lg:w-4/5 2xl:text-lg">
+              </h2>
+              <p className="text-gray-500 lg:w-5/6 mb-8 text-sm lg:text-base lg:leading-tight">
                 Te presentamos un sistema simple y eficiente que te permitirá
                 pagar tu impuesto predial en línea, sin tener que salir de casa.
                 Aprovecha esta nueva modalidad y evita filas y tiempos de
                 espera.
               </p>
-
-              <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
+              <div className="flex self-center lg:self-start space-x-4">
                 <Link
                   to="#"
-                  className="inline-block rounded-lg bg-amber-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-amber-300 transition duration-100 hover:bg-amber-600 focus-visible:ring active:bg-amber-700 md:text-base"
+                  className="px-4 py-2  bg-amber-500 text-white rounded-md hover:bg-amber-600"
                 >
-                  ¡Haz tu Pago!
+                  ¡Paga Ahora!
                 </Link>
               </div>
             </div>
-
-            <div className="flex flex-col justify-center py-8 xl:w-5/12">
-              <PresidenciaHero className="max-h-[300px] md:max-h-full" />
+            <div className="">
+              <PresidenciaHero className="w-full h-full object-cover" />
             </div>
-          </section>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* "¿Por qué es importante pagar el impuesto predial?" Section */}
       <section className="bg-gray-100 bg-blend-luminosity bg-opacity-25 py-16 px-4 sm:px-6 lg:px-8">
@@ -330,7 +289,7 @@ export default function Index() {
       {/*    </div>*/}
       {/*  </div>*/}
       {/*</section>*/}
-      <div className="overflow-hidden bg-white shadow-md py-24 sm:py-32">
+      <div className="overflow-hidden bg-white shadow-md py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pr-8 lg:pt-4">
@@ -376,7 +335,7 @@ export default function Index() {
               <h2 className="text-3xl lg:text-4xl font-bold leading-tight">
                 Comienza Ahora con Tu Pago de Impuestos
               </h2>
-              <p className="text-lg lg:text-xl mt-8">
+              <p className="text-lg lg:text-md tracking-tight lg:leading-tight invi mt-8">
                 Honestidad, transparencia y eficiencia, son las palabras que
                 mejor describen nuestro servicio de Pago de Impuesto Predial en
                 Línea. Te invitamos a formar parte de una Ciudad de Acuña más
@@ -387,7 +346,7 @@ export default function Index() {
 
             {/* <!-- Input form --> */}
             <div className="w-full sm:w-6/12 lg:w-5/12 text-center sm:text-left">
-              <form className="mt-8 sm:mt-0 bg-gray-100 shadow-lg shadow-amber-800 p-6 rounded">
+              <form className="mt-8 sm:mt-0 bg-white shadow-lg shadow-amber-800 p-6 rounded">
                 <div className="mb-5">
                   <label
                     htmlFor="cuentaClave"
