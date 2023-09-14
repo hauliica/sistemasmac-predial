@@ -7,6 +7,25 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@media (max-width: 640px) {
+    .presHeroMobile {
+        position: static;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height:auto;
+    }
+}
+
+
+/* Media query for small devices */
+@media (min-width: 960px) {
+    .hero-section {
+        height: calc(100vh - 64px);
+    }
+}
+
 .magicpattern-features {
     width: 100%;
     height: 100%;

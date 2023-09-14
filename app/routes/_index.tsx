@@ -81,14 +81,14 @@ const questions = [
 
 export default function Index() {
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col">
       <header className="bg-white drop-shadow-md h-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex min-w-full justify-center items-center lg:justify-between h-16">
             <div className="flex items-center">
               <AcunaLogo className="w-24 mr-2" />
             </div>
-            <nav className="flex space-x-4">
+            <nav className="hidden lg:flex space-x-4">
               <Link to="#" className="text-gray-600 hover:text-gray-800">
                 Inicio
               </Link>
@@ -106,17 +106,17 @@ export default function Index() {
         </div>
       </header>
 
-      <section className="bg-gray-100 h-screen">
+      <section className="bg-gray-100 hero-section">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="mt-8 lg:-mt-4 text-center lg:w-4/5 lg:text-left flex flex-col justify-center">
+          <div className="grid h-full grid-cols-1 lg:grid-cols-2 gap-8 grid-rows-1">
+            <div className="mt-10 lg:-mt-4 text-center lg:w-4/5 lg:text-left flex flex-col justify-center">
               <span className="mb-2 font-semibold text-amber-500">
                 Estamos orgullosos de presentar
               </span>
-              <h2 className="text-4xl font-bold text-gray-800 mb-4 lg:text-5xl lg:mb-8">
+              <h2 className="text-5xl font-black lg:font-bold text-gray-800 mb-6 lg:text-5xl lg:mb-8">
                 Un nuevo método para pagar tu predial
               </h2>
-              <p className="text-gray-500 lg:w-5/6 mb-8 text-sm lg:text-base lg:leading-tight">
+              <p className="text-gray-600 lg:w-5/6 mb-8 text-md lg:text-base lg:leading-tight">
                 Te presentamos un sistema simple y eficiente que te permitirá
                 pagar tu impuesto predial en línea, sin tener que salir de casa.
                 Aprovecha esta nueva modalidad y evita filas y tiempos de
@@ -125,14 +125,14 @@ export default function Index() {
               <div className="flex self-center lg:self-start space-x-4">
                 <Link
                   to="#"
-                  className="px-4 py-2  bg-amber-500 text-white rounded-md hover:bg-amber-600"
+                  className="py-4 shadow-md shadow-amber-500 transition-all duration-100 px-8 md:px-4 md:py-2 bg-amber-500 text-amber-100 font-bold text-lg md:text-md rounded-lg hover:bg-amber-600"
                 >
                   ¡Paga Ahora!
                 </Link>
               </div>
             </div>
             <div className="">
-              <PresidenciaHero className="w-full h-full object-cover" />
+              <PresidenciaHero className="h-full object-cover presHeroMobile" />
             </div>
           </div>
         </div>

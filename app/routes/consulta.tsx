@@ -42,7 +42,7 @@ export default function Consulta() {
       <section className="container mx-auto grid lg:grid-cols-2 gap-6 mb-6">
         <div className="bg-white p-4 rounded-md shadow-md">
           <h2 className="text-lg font-semibold text-gray-800">
-            Personal Information
+            Datos del Contribuyente
           </h2>
           <div className="flex items-center space-x-4 mt-4">
             <svg
@@ -54,14 +54,16 @@ export default function Consulta() {
             ></svg>
             <div>
               <p className="text-gray-600">Name: John Doe</p>
-              <p className="text-gray-600">Address: 123 Main St</p>
+              <p className="text-gray-600">CURP: 123 Main St</p>
+              <p className="text-gray-600">RFC: 123 Main St</p>
+              <p className="text-gray-600">Domicilio Fiscal: 123 Main St</p>
             </div>
           </div>
         </div>
 
         <div className="bg-white p-4 rounded-md shadow-md">
           <h2 className="text-lg font-semibold text-gray-800">
-            Property Information
+            Datos del Predio
           </h2>
           <div className="flex items-center space-x-4 mt-4">
             <svg
@@ -72,32 +74,43 @@ export default function Consulta() {
               xmlns="http://www.w3.org/2000/svg"
             ></svg>
             <div>
-              <p className="text-gray-600">Property Address: 456 Elm St</p>
-              <p className="text-gray-600">Debt Amount: $500.00</p>
+              <p className="text-gray-600">Ubicacion del Predio: </p>
+              <p className="text-gray-600">Cuenta-Folio: </p>
+              <p className="text-gray-600">Clave Catastral: </p>
+              <p className="text-gray-600">Valor Catastral: </p>
+              <p className="text-gray-600">Superficie Terreno: </p>
+              <p className="text-gray-600">Superficie Construccion: </p>
+              <p className="text-gray-600">Uso del Predio: </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="container mx-auto mb-6 rounded-md bg-white p-4 shadow-md">
-        <h2 className="text-lg font-semibold text-gray-800">Payment</h2>
-        <div className="mt-4 flex space-x-4">
-          <button className="rounded-md bg-indigo-500 px-4 py-2 text-white hover:bg-indigo-600">
-            Pay Now
-          </button>
-          <button className="rounded-md bg-gray-300 px-4 py-2 text-gray-800 hover:bg-gray-400">
-            Pay Later
-          </button>
+      {/* <section className="container mx-auto mb-6 rounded-md bg-white p-4 shadow-md"> */}
+<div className=" container  mx-auto flex flex-col md:flex-row bg-white rounded-lg p-8 m-4 shadow-lg">
+    <div className="flex flex-col md:flex-1 mb-4 md:mb-0">
+        <div className="mb-6">
+            <span className="text-2xl md:text-lg font-semibold text-gray-800">Total a Pagar:</span>
         </div>
-        <div className="mt-4">
-          <p className="text-gray-600">Amount Due: $500.00</p>
-          <p className="text-gray-600">Payment Options:</p>
-          <ul className="list-disc pl-6">
-            <li className="text-gray-600">Credit Card</li>
-            <li className="text-gray-600">Bank Transfer</li>
-          </ul>
+        <div className="flex flex-col mb-4">
+            <div className="flex flex-col md:flex-row">
+                {/* <h2 className="text-xl md:text-2xl font-semibold text-gray-800 md:mr-4">Monto a Pagar:</h2> */}
+                <span className="text-2xl tracking-wide md:text-3xl text-red-500 font-black" id="totalDue">$500.00</span>
+            </div>
+            <p className="text-md md:text-sm text-gray-800">(Quinientos Pesos con Cero Centavos)</p>
         </div>
-      </section>
+        <div className="flex flex-col">
+            <h2 className="text-sm md:text-md text-gray-600 md:mr-4">Fecha Limite de Pago:</h2>
+            <span className="text-md md:text-lg font-semibold text-gray-800" id="dueDate">Marzo 1, 2023</span>
+        </div>
+    </div>
+    <div className="flex flex-col md:flex-1 mt-4 md:mt-0">
+        <button className="px-4 py-2 mb-2 md:mb-4 w-full bg-amber-500 text-white rounded-md hover:bg-amber-600">Pagar con Tarjeta de Credito/Debito</button>
+        <button className="px-4 py-2 mb-2 md:mb-4 w-full bg-gray-300 text-gray-800 rounded-md hover:bg-gray-400">Imprimir Formato de Pago OXXO</button>
+        <button className="px-4 py-2 w-full bg-gray-300 text-gray-800s rounded-md hover:bg-gray-400">Imprimir Recibo</button>
+    </div>
+</div>
+      {/* </section> */}
 
       <footer className="bg-white" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
